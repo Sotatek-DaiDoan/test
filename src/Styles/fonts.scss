@@ -1,0 +1,50 @@
+$font: (
+  vin5261: (
+    light: (
+      font: 'VIN5261-Light',
+      ext: 'otf',
+    ),
+    regular: (
+      font: 'VIN5261-Regular',
+      ext: 'otf',
+    ),
+    regular-italic: (
+      font: 'VIN5261-RegularItalic',
+      ext: 'otf',
+    ),
+    bold: (
+      font: 'VIN5261-Bold',
+      ext: 'otf',
+    ),
+    bold-italic: (
+      font: 'VIN5261-BoldItalic',
+      ext: 'otf',
+    ),
+  ),
+);
+
+@function font-vin5261($key) {
+  @return map-get(map-get($font, vin5261), $key);
+}
+
+@mixin font-generator() {
+  @each $font-key, $map-value in $font {
+    @each $type-key, $value in $map-value {
+      $font-face: map-get(
+        $map: $value,
+        $key: font,
+      );
+      $font-ext: map-get(
+        $map: $value,
+        $key: ext,
+      );
+      $url: '../assets/fonts/' + $font-face;
+      @font-face {
+        font-family: $font-face;
+        src: url($url + '.' + $font-ext);
+      }
+    }
+  }
+}
+
+@include font-generator();

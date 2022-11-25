@@ -1,0 +1,8 @@
+
+export const STATUS_HTTP = {
+    GET_SUCCESS : 200,
+    CREATE_SUCCESS : 201,
+    NO_CONTENT: 204,
+    NOT_FOUND : 404,
+    SERVER_ERROR : 500,
+}

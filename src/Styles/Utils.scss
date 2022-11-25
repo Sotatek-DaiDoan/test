@@ -1,0 +1,11 @@
+@mixin truncate-text() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin from-mobile($key, $breakpoint: $grid-breakpoints) {
+  @media (min-width: map-get($breakpoint, $key)) {
+    @content;
+  }
+}

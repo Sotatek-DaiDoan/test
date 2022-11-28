@@ -37,7 +37,9 @@ const MyProfile: React.FC<React.PropsWithChildren<Props>> = (props) => {
 
   return (
     <div>
-      <Text color="#FFFFFF" align="center">Profile</Text>
+      <Text color="#FFFFFF" align="center">
+        Profile
+      </Text>
       {data}
     </div>
   );

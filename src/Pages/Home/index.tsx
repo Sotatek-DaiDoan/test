@@ -1,9 +1,12 @@
 import React from "react";
 import { Center, Heading, Text } from "@chakra-ui/react";
+// import { useAppSelector } from "Hooks";
 
 type Props = {};
 
 const Home: React.FC<React.PropsWithChildren<Props>> = (props) => {
+  // const keyName = useAppSelector((state) => state.example?.keyName)
+
   return (
     <Center flexDir={"column"} my="20">
       <Heading

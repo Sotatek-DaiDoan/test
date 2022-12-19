@@ -1,23 +1,23 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 // import { handleRequest } from 'Utils'
 // import coinGeckoService from 'Services/Instances/ExampleService'
 
 // state type
 export type ExampleState = {
-  keyName: string
-  tokenAccess: string
-}
+  keyName: string;
+  tokenAccess: string;
+};
 
 // payload type
 export type UpdateExampleSlice = {
-  newValue: string
-}
+  newValue: string;
+};
 
 // init state
 const initialState: ExampleState = {
-  keyName: 'example',
-  tokenAccess: '',
-}
+  keyName: "",
+  tokenAccess: "",
+};
 
 // thunk action
 // const asyncExample = createAsyncThunk(
@@ -32,15 +32,14 @@ const initialState: ExampleState = {
 // slice create
 // @ts-ignore
 export const ExampleSlice = createSlice({
-  name: 'example',
+  name: "example",
   initialState,
   reducers: {
     updateExampleSlice: (
       state: ExampleState,
       action: PayloadAction<UpdateExampleSlice>
     ) => {
-      console.log(state)
-      state.keyName = action.payload.newValue
+      state.keyName = action.payload.newValue;
     },
   },
   // extraReducers(builder) {
@@ -48,10 +47,10 @@ export const ExampleSlice = createSlice({
   //     state.keyName = action.payload
   //   })
   // },
-})
+});
 
 // normal flow action
-export const exampleSliceActions = { ...ExampleSlice.actions }
+export const exampleSliceActions = { ...ExampleSlice.actions };
 
 // export
-export default ExampleSlice.reducer
+export default ExampleSlice.reducer;

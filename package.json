@@ -62,8 +62,8 @@
     "start:dev": "cross-env NODE_ENV='development' env-cmd -f .env.development react-scripts start",
     "build": "env-cmd -f .env react-scripts build",
     "build:dev": "env-cmd -f .env.development react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "node ./node_modules/jest/bin/jest.js --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -84,6 +84,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.18.6",
     "@types/node": "^18.0.6",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
@@ -91,6 +92,7 @@
     "@types/react-select": "^5.0.1",
     "@types/uuid": "^8.3.4",
     "husky": "^8.0.2",
+    "jest": "^29.3.1",
     "lint-staged": "^13.0.4",
     "prettier": "2.8.0",
     "typescript": "^4.7.4"
